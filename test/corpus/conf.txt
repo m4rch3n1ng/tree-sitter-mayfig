@@ -1,0 +1,224 @@
+========
+values
+========
+
+one = false
+two = 0010
+thr = -20
+fou = +10
+fiv = 1.0
+six = -1e9
+sev = 1.8e-4
+eig = .0
+nin = .1e0
+
+--------
+
+(config
+  (kv
+    (bare_key)
+    (bool))
+  (kv
+    (bare_key)
+    (int))
+  (kv
+    (bare_key)
+    (int))
+  (kv
+    (bare_key)
+    (int))
+  (kv
+    (bare_key)
+    (float))
+  (kv
+    (bare_key)
+    (float))
+  (kv
+    (bare_key)
+    (float))
+  (kv
+    (bare_key)
+    (float))
+  (kv
+    (bare_key)
+    (float)))
+
+========
+keys
+========
+
+one   = false
+alt+p = false
+one-2 = false
+false = false
+"two" = false
+2     = true
++2    = true
+.inf  = true
+
+--------
+
+(config
+  (kv
+    (bare_key)
+    (bool))
+  (kv
+    (bare_key)
+    (bool))
+  (kv
+    (bare_key)
+    (bool))
+  (kv
+    (bare_key)
+    (bool))
+  (kv
+    (quoted_key)
+    (bool))
+  (kv
+    (int)
+    (bool))
+  (kv
+    (int)
+    (bool))
+  (kv
+    (float)
+    (bool)))
+
+========
+map
+========
+
+one {
+	two = true
+}
+
+thr = {
+	fou = 20
+}
+
+--------
+
+(config
+  (kv
+    (bare_key)
+    (map
+      (kv
+        (bare_key)
+        (bool))))
+  (kv
+    (bare_key)
+    (map
+      (kv
+        (bare_key)
+        (int)))))
+
+========
+seq
+========
+
+one = [ ,,,,,, ]
+two = ["two" false 0]
+thr = [
+  "thr",
+  true,
+  0
+]
+
+--------
+
+(config
+  (kv
+    (bare_key)
+    (seq))
+  (kv
+    (bare_key)
+    (seq
+      (string)
+      (bool)
+      (int)))
+  (kv
+    (bare_key)
+    (seq
+      (string)
+      (bool)
+      (int))))
+
+========
+comments
+========
+
+# this is a comment
+one = false # here is also one
+map {
+    # inside of a map
+}
+
+--------
+
+(config
+  (comment)
+  (kv
+    (bare_key)
+    (bool))
+  (comment)
+  (kv
+    (bare_key)
+    (map
+      (comment))))
+
+========
+tagged
+========
+
+bind {
+	mod+tab = "cycle" [ "next" ]
+	"mod+shift+n" = "spawn" [ "firefox" "--private-window" ]
+}
+
+gestures {
+	swipe [ 4 "right" ] = "workspace" [ 2 ]
+	swipe [ 4 "left" ] = "workspace" [ 0 ]
+}
+
+--------
+
+(config
+  (kv
+    (bare_key)
+    (map
+      (kv
+        (bare_key)
+        (tagged
+          (string)
+          (seq
+            (string))))
+      (kv
+        (quoted_key)
+        (tagged
+          (string)
+          (seq
+            (string)
+            (string))))))
+  (kv
+    (bare_key)
+    (map
+      (kv
+        (tagged
+          (bare_key)
+          (seq
+            (int)
+            (string)))
+        (tagged
+          (string)
+          (seq
+            (int))))
+      (kv
+        (tagged
+          (bare_key)
+          (seq
+            (int)
+            (string)))
+        (tagged
+          (string)
+          (seq
+            (int)))))))
