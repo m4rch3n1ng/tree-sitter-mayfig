@@ -8,6 +8,8 @@
 (int) @constant.numeric.integer
 (float) @constant.numeric.float
 
+(escaped) @constant.character.escape
+
 "," @punctuation.delimiter
 
 "=" @operator

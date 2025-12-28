@@ -24,7 +24,17 @@ module.exports = grammar({
       $.kv,
     ),
 
-    string: _ => seq('"', repeat(/[^"]/), '"'),
+    escaped: _ => token.immediate(seq("\\", /./)),
+    _string_content: _ => token.immediate(repeat1(/[^\x00-\x1F\x22\x5c\x7F]/)),
+
+    string: $ => seq(
+      '"',
+      repeat(choice(
+        $._string_content,
+        $.escaped,
+      )),
+      '"'
+    ),
     bool: _ => choice("true", "false"),
 
     int: _ => /[+-]?[0-9]+/,

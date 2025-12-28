@@ -11,6 +11,8 @@ six = -1e9
 sev = 1.8e-4
 eig = .0
 nin = .1e0
+eig = "test"
+nin = "tes\t"
 
 --------
 
@@ -41,7 +43,14 @@ nin = .1e0
     (float))
   (kv
     (bare_key)
-    (float)))
+    (float))
+  (kv
+    (bare_key)
+    (string))
+  (kv
+    (bare_key)
+    (string
+      (escaped))))
 
 ========
 keys

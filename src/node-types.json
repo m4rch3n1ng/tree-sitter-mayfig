@@ -90,7 +90,17 @@
   {
     "type": "quoted_key",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escaped",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "seq",
@@ -130,7 +140,17 @@
   {
     "type": "string",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "escaped",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "tagged",
@@ -199,6 +219,10 @@
     "type": "comment",
     "named": true,
     "extra": true
+  },
+  {
+    "type": "escaped",
+    "named": true
   },
   {
     "type": "false",
