@@ -1,0 +1,9 @@
+[
+  (map)
+  (seq)
+] @indent
+
+[
+  "}"
+  "]"
+] @outdent
