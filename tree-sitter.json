@@ -9,6 +9,15 @@
       "file-types": [
         "mf"
       ],
+      "highlights": [
+        "queries/helix/highlights.scm"
+      ],
+      "injections": [
+        "queries/helix/injections.scm"
+      ],
+      "tags": [
+        "queries/helix/tags.scm"
+      ],
       "injection-regex": "^mayfig$",
       "class-name": "TreeSitterMayfig"
     }

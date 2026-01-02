@@ -10,9 +10,9 @@
 
 (escaped) @constant.character.escape
 
-"," @punctuation.delimiter
-
 "=" @operator
+
+"," @punctuation.delimiter
 
 "{" @punctuation.bracket
 "}" @punctuation.bracket

@@ -1,0 +1,5 @@
+[
+  (kv)
+  (map)
+  (seq)
+] @fold
